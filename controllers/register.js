@@ -2,10 +2,12 @@ module.exports = {
 
     roteadores:[
         {
+            id:generateID(),
             nome:"router1",
             garantia:"SIM",
             fabricante:" cisco", 
-            suporte:"6 nmeses"
+            suporte:"6 meses",
+            justificativa:""
         }
     ],
      getAll(){
