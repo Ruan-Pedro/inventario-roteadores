@@ -1,16 +1,23 @@
 const express = require('express')
 const path = require('path')
-const fs = require('fs')
-const bodyParser = require('body-parser')
+//  const fs = require('fs')
+//  const bodyParser = require('body-parser')
 const apiRoutes = require('./routes/api')
 
 const app = express()
 const PORT = 5050
 
-app.use('/api',apiRoutes)
 app.use('/',express.static(path.join(__dirname, "client")))
+<<<<<<< Updated upstream:Node-server/server.js
 app.use('/database', express.static(path.join(__dirname, "public/database.html")))
 app.use('/dashboard', express.static(path.join(__dirname, "public/dashboard.html")))
+=======
+app.use('/api',apiRoutes)
+app.use('/database', express.static(path.join(__dirname, "public/database.html")))
+//  app.use('/database/style.css', express.static(path.join(__dirname, "public/styles/style.css")))
+
+ app.use('/dashboard', express.static(path.join(__dirname, "public/dashboard.html")))
+>>>>>>> Stashed changes:server.js
 app.use('/management',express.static(path.join(__dirname, "public/management.html")))
 
 // app.get('/', (req,res)=>{
