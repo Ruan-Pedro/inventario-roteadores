@@ -3,12 +3,14 @@ const bodyParser = require('body-parser')
 const register = require('../controllers/register')
 const router = express.Router()
 
+
+
 router.get('/all', (req,res)=>{
     res.json(JSON.stringify(register.getAll()))
     
 })
-router.post('/delete', bodyParser.json(), (req,res)=>{
-    let nome = req.body.nome
+router.delete('/delete/:id', bodyParser.json(), (req,res)=>{
+    let nome = req.params.nome
     register.removeItem(nome,1)
     res.send('deletado!')
 })

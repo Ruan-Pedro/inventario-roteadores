@@ -9,7 +9,9 @@ const PORT = 5050
 
 app.use('/api',apiRoutes)
 app.use('/',express.static(path.join(__dirname, "client")))
-app.use('/management',express.static(path.join(__dirname, "public")))
+app.use('/database', express.static(path.join(__dirname, "public/database.html")))
+app.use('/dashboard', express.static(path.join(__dirname, "public/dashboard.html")))
+app.use('/management',express.static(path.join(__dirname, "public/management.html")))
 
 // app.get('/', (req,res)=>{
 // res.send(express.static(path.join(__dirname + "client")))
