@@ -1,0 +1,68 @@
+<app-sidenav></app-sidenav>
+
+<div class="container">
+
+    <h2>Cadastre um Novo Roteador</h2>
+    <div class="row100">
+        <div class="col">
+            <div class="inputBox">
+                <input type="text" name="" required>
+                <span class="text">Nome do Roteador</span>
+                <span class="line"></span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="inputBox">
+                <input class="title" type="text" name="title" required>
+                <span class="text">Fabricante</span>
+  
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+  
+  
+    <div class="row100">
+      <div class="col">
+          <div class="inputBox">
+              <div class="select">
+              <select type="text" name="suporte" required>
+              <option selected disabled>Possui Garantia?</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+  
+              </select>
+          </div>
+              <!-- <span class="text">Suporte</span>
+              <span class="line"></span>  -->
+  </div>
+      </div>
+      <div class="col">
+          <div class="inputBox">
+              <input  class="title" type="text" name="title" required>
+              <span class="text">Garantia <span style="font-size: 14px; font-weight: 200;">(em meses)</span></span>
+  
+              <span class="line"></span>
+          </div>
+      </div>
+  </div>
+  <div class="row100" >
+      <div class="col">
+          <div class="inputBox textarea">
+              <textarea  id="description" required="required"></textarea>
+              <span class="text">Insira a justificativa do cadastro de roteador</span>
+              <span class="line"></span>
+          </div>
+      </div>
+      
+  </div>
+    <div class="row100">
+      <div class="col">
+          <div class="inputBox">
+            <button onclick="registerItem()">Salvar Roteador</button>
+  
+          </div>
+      </div>
+    </div>
+  
+  </div>
