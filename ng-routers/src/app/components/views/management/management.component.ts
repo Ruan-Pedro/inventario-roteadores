@@ -10,7 +10,7 @@ interface Food {
   styleUrls: ['./management.component.scss']
 })
 export class ManagementComponent implements OnInit {
-
+  
   //tentativa de usar material select
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak'},
@@ -18,9 +18,20 @@ export class ManagementComponent implements OnInit {
     {value: 'tacos-2', viewValue: 'Tacos'}
   ];
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
   }
+  propLegal = "fonzera!"
+  teste():void{
+    console.log('funcionou? XD')
+    fetch("http://192.168.0.111:5050/api/all").then(res=>{
+      return res.json()
+    }).then(json=>{
+      console.log(json)
 
+    })
+  }
 }

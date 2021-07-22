@@ -1,19 +1,22 @@
-import { Directive, Input, OnInit } from '@angular/core';
+import { Directive, Input, OnChanges, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[forListTemplate]'
+  selector: '[listFor]'
 })
-export class ForDirective implements OnInit{
+export class ForDirective implements OnChanges{
+  @Input('listForIn') numbers: number[]
 
-  @Input('forListTemplateIn') numbers: number[]
-  @Input('forListTemplateProduct') texto: string
+  constructor(
+    private container:ViewContainerRef,
+    private template: TemplateRef<any>
+  ) { 
+  }
 
-  constructor() { 
-    
-   }
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    for(let number of this.numbers){
+      this.container.createEmbeddedView(this.template, { $implicit: number })
+    }
     console.log(this.numbers)
-    console.log(this.texto)
 
   }
 }

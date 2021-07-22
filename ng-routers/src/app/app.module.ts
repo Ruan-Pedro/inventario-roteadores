@@ -12,7 +12,7 @@ import { DatabaseComponent } from './components/views/database/database.componen
 import { SidenavComponent } from './components/template/sidenav/sidenav.component';
 import { MatIconModule } from '@angular/material/icon'
 import { MatSelectModule } from '@angular/material/select';
-import { ForDirective } from './directives/for.directive'
+import { ForDirective } from './directives/for.directive';
 // import {MatSidenavModule } from '@angular/material/sidenav'
 // import {MatListModule } from '@angular/material/list'
 
@@ -25,7 +25,8 @@ import { ForDirective } from './directives/for.directive'
     DashboardComponent,
     DatabaseComponent,
     SidenavComponent,
-    ForDirective
+    ForDirective,
+    
   ],
   imports: [
     BrowserModule,
