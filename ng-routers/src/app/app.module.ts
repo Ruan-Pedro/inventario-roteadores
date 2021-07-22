@@ -11,6 +11,8 @@ import { DashboardComponent } from './components/views/dashboard/dashboard.compo
 import { DatabaseComponent } from './components/views/database/database.component';
 import { SidenavComponent } from './components/template/sidenav/sidenav.component';
 import { MatIconModule } from '@angular/material/icon'
+import { MatSelectModule } from '@angular/material/select';
+import { ForDirective } from './directives/for.directive';
 // import {MatSidenavModule } from '@angular/material/sidenav'
 // import {MatListModule } from '@angular/material/list'
 
@@ -22,13 +24,16 @@ import { MatIconModule } from '@angular/material/icon'
     ManagementComponent,
     DashboardComponent,
     DatabaseComponent,
-    SidenavComponent
+    SidenavComponent,
+    ForDirective,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
 
   ],
   exports: [
