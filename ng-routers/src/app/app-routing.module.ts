@@ -6,7 +6,6 @@ import { DatabaseComponent } from './components/views/database/database.componen
  import { HomeComponent } from './components/template/home/home.component';
 
 
-
 const routes: Routes = [
   {
     path:"",
@@ -14,7 +13,8 @@ const routes: Routes = [
   },
   {
     path: "management",
-    component: ManagementComponent
+    component: ManagementComponent,
+    
   },
   {
     path: "dashboard",
@@ -23,7 +23,8 @@ const routes: Routes = [
   {
     path: "database",
     component: DatabaseComponent
-  }
+  },
+  
 ];
 
 @NgModule({

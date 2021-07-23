@@ -1,6 +1,8 @@
-<app-sidenav></app-sidenav>
 
-<div class="container">
+
+  <app-sidenav></app-sidenav>
+  
+  <div class="container">
 
     <h2 [id]="propLegal">Cadastre um Novo Roteador</h2>
     <div class="row100">
@@ -66,10 +68,13 @@
     <div class="row100">
       <div class="col">
           <div class="inputBox">
-            <button (click)="teste()">Salvar Roteador</button>
+            <button (click)="showCreatedRouter()" (click)="teste()">Salvar Roteador</button>
   
           </div>
       </div>
     </div>
-  
+    <div class="result-container">
+        <router-outlet></router-outlet>
+    </div>
+
   </div>

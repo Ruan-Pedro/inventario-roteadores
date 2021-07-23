@@ -8,6 +8,30 @@ module.exports = {
             fabricante:" cisco", 
             suporte:"6 meses",
             justificativa:""
+        },
+        {
+            id:generateID(),
+            nome:"TP-LINK",
+            garantia:"NÃO",
+            fabricante:" IBM", 
+            suporte:"7 meses",
+            justificativa:""
+        },
+        {
+            id:generateID(),
+            nome:"LINK-ROUTER",
+            garantia:"SIM",
+            fabricante:" MICROSOFT", 
+            suporte:"3 ANOS",
+            justificativa:""
+        },
+        {
+            id:generateID(),
+            nome:"NET PROVIDER",
+            garantia:"NÃO",
+            fabricante:" APPLE", 
+            suporte:"6 SEMESTRES",
+            justificativa:""
         }
     ],
      getAll(){
@@ -22,6 +46,7 @@ module.exports = {
 
     registerItem( nome, garantia, fabricante, suporte ){
         this.roteadores.push({id:generateID(), nome, garantia, fabricante, suporte})
+        console.log('ok')
     }
 
 }

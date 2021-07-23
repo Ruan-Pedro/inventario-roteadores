@@ -3,9 +3,16 @@ const path = require('path')
 //  const fs = require('fs')
 //  const bodyParser = require('body-parser')
 const apiRoutes = require('./routes/api')
-
+const cors = require('cors')
+const router = require('./routes/api')
 const app = express()
 const PORT = 5050
+
+
+const option = {
+    origin:"http://localhost:4200"
+}
+router.use(cors(option))
 
 app.use('/',express.static(path.join(__dirname, "client")))
 app.use('/api',apiRoutes)

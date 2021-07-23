@@ -13,6 +13,9 @@ import { SidenavComponent } from './components/template/sidenav/sidenav.componen
 import { MatIconModule } from '@angular/material/icon'
 import { MatSelectModule } from '@angular/material/select';
 import { ForDirective } from './directives/for.directive';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
+
+import { HttpClientModule } from '@angular/common/http'
 // import {MatSidenavModule } from '@angular/material/sidenav'
 // import {MatListModule } from '@angular/material/list'
 
@@ -33,7 +36,9 @@ import { ForDirective } from './directives/for.directive';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule,
+    HttpClientModule
 
   ],
   exports: [

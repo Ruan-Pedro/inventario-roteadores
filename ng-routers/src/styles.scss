@@ -47,3 +47,8 @@ html, body{
     overflow-x: hidden;
     background-color: #232427;
 }
+.cdk-overlay-pane{
+  position: absolute!important;
+    top: 0!important;
+    right: 20px!important;
+}
