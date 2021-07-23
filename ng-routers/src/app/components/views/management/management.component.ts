@@ -1,8 +1,7 @@
+import { RouterService } from './../../router/router.service';
 import { Component, OnInit } from '@angular/core';
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import { Router } from '@angular/router'
+import { RouterData } from './router.model';
 
 @Component({
   selector: 'app-management',
@@ -11,27 +10,43 @@ interface Food {
 })
 export class ManagementComponent implements OnInit {
   
-  //tentativa de usar material select
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
 
-  constructor() { 
+  //tentativa de usar material select
+  routerData: RouterData = {
+    name:'TP-Link',
+    fabricante:'CISCO',
+    garantia:'Não',
+    suporte:'5 meses',
+    justificativa:'',
+  }
+
+  constructor(
+    private route: Router,
+    private RouterService: RouterService
+  ) { 
     
   }
 
   ngOnInit(): void {
+    
   }
+  showCreatedRouter():void{
+    this.RouterService.create(this.routerData).subscribe((s)=>{
+      console.log(s);
+      this.RouterService.showMSG('Roteador Adcionado com sucesso!')
+
+    }, (e)=> console.log(e))
+  }
+  
   propLegal = "fonzera!"
   teste():void{
     console.log('funcionou? XD')
-    fetch("http://192.168.0.111:5050/api/all").then(res=>{
-      return res.json()
-    }).then(json=>{
-      console.log(json)
-
-    })
+     fetch("http://192.168.0.111:5050/api/all").then(res=>{
+       return res.json()
+     }).then(json=>{
+       console.log(json)
+     })
   }
+  
+
 }
