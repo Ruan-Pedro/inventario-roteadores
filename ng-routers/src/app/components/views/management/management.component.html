@@ -8,14 +8,14 @@
     <div class="row100">
         <div class="col">
             <div class="inputBox">
-                <input type="text" name="" required>
+                <input matInput type="text" name="name" required [(ngModel)]="routerData.name">
                 <span class="text">Nome do Roteador</span>
                 <span class="line"></span>
             </div>
         </div>
         <div class="col">
             <div class="inputBox">
-                <input class="title" type="text" name="title" required>
+                <input matInput class="title" type="text" name="fabricante" required [(ngModel)]="routerData.fabricante">
                 <span class="text">Fabricante</span>
   
                 <span class="line"></span>
@@ -28,10 +28,10 @@
       <div class="col">
           <div class="inputBox">
               <div class="select">
-              <select type="text" name="suporte" required>
-              <option selected disabled>Possui Garantia?</option>
-              <option value="Sim">Sim</option>
-              <option value="Não">Não</option>
+              <select type="text" name="garantia" required>
+              <option matInput selected disabled [(ngModel)]="routerData.garantia">Possui Garantia?</option>
+              <option matInput value="Sim" name="sim" >Sim</option>
+              <option matInput value="Não" name="não">Não</option>
               </select>
               </div>
               <!-- <mat-form-field appearance="fill">
@@ -48,7 +48,7 @@
       </div>
       <div class="col">
           <div class="inputBox">
-              <input  class="title" type="text" name="title" required>
+              <input  class="title" type="text" name="suporte" required [(ngModel)]="routerData.suporte">
               <span class="text">Suporte <span style="font-size: 14px; font-weight: 200;">(em meses)</span></span>
   
               <span class="line"></span>
@@ -58,7 +58,7 @@
   <div class="row100" >
       <div class="col">
           <div class="inputBox textarea">
-              <textarea  id="description" required="required"></textarea>
+              <textarea  matInput id="description" required="required" name="justificativa" [(ngModel)]="routerData.justificativa"></textarea>
               <span class="text">Insira a justificativa do cadastro de roteador</span>
               <span class="line"></span>
           </div>
@@ -74,7 +74,7 @@
       </div>
     </div>
     <div class="result-container">
-        <router-outlet></router-outlet>
+        <!-- <router-outlet></router-outlet> -->
     </div>
 
   </div>
