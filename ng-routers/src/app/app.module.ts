@@ -39,7 +39,6 @@ import { HttpClientModule } from '@angular/common/http'
     MatSelectModule,
     MatSnackBarModule,
     HttpClientModule
-
   ],
   exports: [
     

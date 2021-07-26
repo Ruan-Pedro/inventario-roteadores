@@ -1,39 +1,6 @@
 module.exports = {
 
-    roteadores:[
-        {
-            id:generateID(),
-            nome:"router1",
-            garantia:"SIM",
-            fabricante:" cisco", 
-            suporte:"6 meses",
-            justificativa:""
-        },
-        {
-            id:generateID(),
-            nome:"TP-LINK",
-            garantia:"NÃO",
-            fabricante:" IBM", 
-            suporte:"7 meses",
-            justificativa:""
-        },
-        {
-            id:generateID(),
-            nome:"LINK-ROUTER",
-            garantia:"SIM",
-            fabricante:" MICROSOFT", 
-            suporte:"3 ANOS",
-            justificativa:""
-        },
-        {
-            id:generateID(),
-            nome:"NET PROVIDER",
-            garantia:"NÃO",
-            fabricante:" APPLE", 
-            suporte:"6 SEMESTRES",
-            justificativa:""
-        }
-    ],
+    roteadores:[],
      getAll(){
         return this.roteadores
      },

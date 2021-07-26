@@ -2,7 +2,7 @@ import { RouterService } from '../../services/router.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { RouterData } from './router.model';
-
+ 
 @Component({
   selector: 'app-management',
   templateUrl: './management.component.html',
@@ -13,10 +13,10 @@ export class ManagementComponent implements OnInit {
 
   //tentativa de usar material select
   routerData: RouterData = {
-    name:'TP-Link',
-    fabricante:'CISCO',
-    garantia:'Não',
-    suporte:'5 meses',
+    name:'',
+    fabricante:'',
+    garantia:'',
+    suporte:'',
     justificativa:'',
   }
 
