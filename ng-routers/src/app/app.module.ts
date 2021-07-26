@@ -10,17 +10,12 @@ import { ManagementComponent } from './components/views/management/management.co
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
 import { DatabaseComponent } from './components/views/database/database.component';
 import { SidenavComponent } from './components/template/sidenav/sidenav.component';
-<<<<<<< Updated upstream
 import { MatIconModule } from '@angular/material/icon'
 import { MatSelectModule } from '@angular/material/select';
 import { ForDirective } from './directives/for.directive';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { HttpClientModule } from '@angular/common/http'
-=======
-import { MatIconModule } from '@angular/material/icon';
-import { DbforDirective } from './directives/dbfor.directive'
->>>>>>> Stashed changes
 // import {MatSidenavModule } from '@angular/material/sidenav'
 // import {MatListModule } from '@angular/material/list'
 
@@ -33,12 +28,8 @@ import { DbforDirective } from './directives/dbfor.directive'
     DashboardComponent,
     DatabaseComponent,
     SidenavComponent,
-<<<<<<< Updated upstream
     ForDirective,
     
-=======
-    DbforDirective
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
