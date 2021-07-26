@@ -3,27 +3,18 @@
 <h2 class="title">Router Datalines</h2>
 <div class="database-container">
     <ul class="base-info flexStyle">
-        
         <li>id</li>
         <li>Nome</li>
         <li>Fabricante</li>
         <li>Garantia</li>
         <li>Suporte</li>
     </ul>
-    
-    <ul class="data-base flexStyle">
-        <li>#3sda4D</li>
-        <li>TP-LINK</li>
-        <li>CISCO</li>
-        <li>SIM</li>
-        <li>5 meses</li>
-    </ul>
-    <ul *listFor="let i in [1 ,12 ,35, 78, 123]" class="data-base flexStyle">
-        <li>{{ i }}</li>
-        <li>{{ i }}</li>
-        <li>HAUSZXD</li>
-        <li>NÃO</li>
-        <li>5 ANOS</li>
+    <ul *ngFor="let routerData of routerDatas " class="data-base flexStyle">
+        <li>{{ routerData.id }}</li>
+        <li>{{ routerData.nome }}</li>
+        <li>{{ routerData.fabricante }}</li>
+        <li>{{ routerData.garantia }}</li>
+        <li>{{ routerData.suporte }}</li>
     </ul>
 
 

@@ -1,4 +1,6 @@
+import { RouterService } from './../../router/router.service';
 import { Component, OnInit } from '@angular/core';
+import { RouterData } from '../management/router.model'
 
 @Component({
   selector: 'app-database',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./database.component.scss']
 })
 export class DatabaseComponent implements OnInit {
-
-  constructor() { }
+  routerDatas: RouterData[]
+  constructor(
+    private RouterService:RouterService
+  ) { }
 
   ngOnInit(): void {
+    this.RouterService.read().subscribe( routerDatas=>{
+      this.routerDatas = routerDatas
+      console.log(routerDatas)
+    } )
   }
 
 }

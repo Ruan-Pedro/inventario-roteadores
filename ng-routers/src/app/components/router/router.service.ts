@@ -7,7 +7,6 @@ import { RouterData} from '../views/management/router.model'
   providedIn: 'root'
 })
 export class RouterService {
-
   baseUrl = "http://192.168.0.111:5050/api"
   constructor(
     private snackBar: MatSnackBar,
@@ -28,5 +27,9 @@ export class RouterService {
     return this.http.post<RouterData>(`${this.baseUrl}/new`, router)
   }
 
+  read():Observable<RouterData[]>{
+    return this.http.get<RouterData[]>(`${this.baseUrl}/all`)
+  }
 }
+
 

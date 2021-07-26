@@ -29,7 +29,6 @@ import { HttpClientModule } from '@angular/common/http'
     DatabaseComponent,
     SidenavComponent,
     ForDirective,
-    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +38,6 @@ import { HttpClientModule } from '@angular/common/http'
     MatSelectModule,
     MatSnackBarModule,
     HttpClientModule
-
   ],
   exports: [
     
