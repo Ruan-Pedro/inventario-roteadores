@@ -25,7 +25,28 @@ async function getRouter(routerID){
         console.log(error)
     }
 }
+
+async function insertRouter(routerValues){
+    try{
+        let pool = await sql.connect(config)
+        let insertRouter = await pool.request()
+        .input('nome', sql.NVarChar, routerValues.nome)
+        .input('fabricante', sql.NVarChar, routerValues.fabricante)
+        .input('garantia', sql.NVarChar, routerValues.garantia)
+        .input('suporte', sql.NVarChar, routerValues.suporte)
+        .input('justificativa', sql.NText, routerValues.justificativa)
+        .query('insert into roteadores_cad (nome, fabricante , garantia, suporte, justificativa)values (@nome, @fabricante , @garantia, @suporte, @justificativa)')
+        // .query("select * from roteadores_cad where id_roteador = @input_parameter");
+    return router.recordsets
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
+
 module.exports = {
     getRouters:getRouters,
-    getRouter:getRouter
+    getRouter:getRouter,
+    insertRouter:insertRouter
 }

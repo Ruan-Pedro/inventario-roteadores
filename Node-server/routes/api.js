@@ -27,6 +27,14 @@ router.get('/all/:id', (req,res)=>{
     })
 })
 
+router.post('/insert-router', (req,res)=>{
+    // res.status(200).json(register.getAll())
+    let routerModel = {...req.body}
+    db_operations.insertRouter(routerModel).then(result =>{
+        res.status(200).json(result)
+    })
+})
+
 router.delete('/delete/:id', bodyParser.json(), (req,res)=>{
     let nome = req.params.nome
     register.removeItem(nome,1)
@@ -39,8 +47,8 @@ router.post('/new', bodyParser.json(),(req,res)=>{
     let fabricante = req.body.fabricante
     register.registerItem(nome,garantia,fabricante,suporte)
     res.status(200).send('funcionou')
-    
 })
+
 
 
 
