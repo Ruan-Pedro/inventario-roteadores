@@ -2,18 +2,31 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const register = require('../controllers/register')
 const router = express.Router()
-const cors = require('cors')
 
-const option = {
-    origin:"http://localhost:4200"
-}
-router.use(cors(option))
+//conexão com o banco SQL SERVER
+const sql = require('mssql')
+const config = require('../infra/DB-connection')
+const db_operations = require('../infra/db_operations')
 
+router.use((req,res, next)=>{
+    console.log("middleware")
+    next()
+})
 
 router.get('/all', (req,res)=>{
-    res.status(200).json(register.getAll())
-    
+    // res.status(200).json(register.getAll())
+    db_operations.getRouters().then(result =>{
+        res.status(200).json(result)
+    })
 })
+
+router.get('/all/:id', (req,res)=>{
+    // res.status(200).json(register.getAll())
+    db_operations.getRouter(req.params.id).then(result =>{
+        res.json(result)
+    })
+})
+
 router.delete('/delete/:id', bodyParser.json(), (req,res)=>{
     let nome = req.params.nome
     register.removeItem(nome,1)
@@ -26,8 +39,10 @@ router.post('/new', bodyParser.json(),(req,res)=>{
     let fabricante = req.body.fabricante
     register.registerItem(nome,garantia,fabricante,suporte)
     res.status(200).send('funcionou')
-    console.log('ta')
+    
 })
+
+
 
 module.exports = router
  

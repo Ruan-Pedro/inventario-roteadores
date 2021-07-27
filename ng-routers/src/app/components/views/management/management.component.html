@@ -4,18 +4,18 @@
   
   <div class="container">
 
-    <h2 [id]="propLegal">Cadastre um Novo Roteador</h2>
+    <h2 id="propLegal">Cadastre um Novo Roteador</h2>
     <div class="row100">
         <div class="col">
             <div class="inputBox">
-                <input matInput type="text" name="name" required [(ngModel)]="routerData.name">
+                <input type="text" name="name" required [(ngModel)]="routerData.name">
                 <span class="text">Nome do Roteador</span>
                 <span class="line"></span>
             </div>
         </div>
         <div class="col">
             <div class="inputBox">
-                <input matInput class="title" type="text" name="fabricante" required [(ngModel)]="routerData.fabricante">
+                <input class="title" type="text" name="fabricante" required [(ngModel)]="routerData.fabricante">
                 <span class="text">Fabricante</span>
   
                 <span class="line"></span>
@@ -29,9 +29,9 @@
           <div class="inputBox">
               <div class="select">
               <select type="text" name="garantia" required>
-              <option matInput selected disabled [(ngModel)]="routerData.garantia">Possui Garantia?</option>
-              <option matInput value="Sim" name="sim" >Sim</option>
-              <option matInput value="Não" name="não">Não</option>
+              <option selected disabled [(ngModel)]="routerData.garantia">Possui Garantia?</option>
+              <option value="Sim" name="sim" >Sim</option>
+              <option value="Não" name="não">Não</option>
               </select>
               </div>
               <!-- <mat-form-field appearance="fill">
@@ -58,7 +58,7 @@
   <div class="row100" >
       <div class="col">
           <div class="inputBox textarea">
-              <textarea  matInput id="description" required="required" name="justificativa" [(ngModel)]="routerData.justificativa"></textarea>
+              <textarea matInput id="description" required="required" name="justificativa" [(ngModel)]="routerData.justificativa"></textarea>
               <span class="text">Insira a justificativa do cadastro de roteador</span>
               <span class="line"></span>
           </div>
@@ -68,7 +68,7 @@
     <div class="row100">
       <div class="col">
           <div class="inputBox">
-            <button (click)="showCreatedRouter()" (click)="teste()">Salvar Roteador</button>
+            <button (click)="showCreatedRouter()">Salvar Roteador</button>
   
           </div>
       </div>

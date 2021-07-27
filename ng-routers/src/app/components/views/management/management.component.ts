@@ -10,8 +10,6 @@ import { RouterData } from './router.model';
 })
 export class ManagementComponent implements OnInit {
   
-
-  //tentativa de usar material select
   routerData: RouterData = {
     name:'',
     fabricante:'',
@@ -22,7 +20,7 @@ export class ManagementComponent implements OnInit {
 
   constructor(
     private route: Router,
-    private RouterService: RouterService
+    private RouterService: RouterService,
   ) { 
     
   }
@@ -31,22 +29,20 @@ export class ManagementComponent implements OnInit {
     
   }
   showCreatedRouter():void{
-    this.RouterService.create(this.routerData).subscribe((s)=>{
-      console.log(s);
+    this.RouterService.create(this.routerData).subscribe(()=>{
       this.RouterService.showMSG('Roteador Adcionado com sucesso!')
-
-    }, (e)=> console.log(e))
+    })
   }
   
-  propLegal = "fonzera!"
-  teste():void{
-    console.log('funcionou? XD')
-     fetch("http://192.168.0.111:5050/api/all").then(res=>{
-       return res.json()
-     }).then(json=>{
-       console.log(json)
-     })
-  }
+  // propLegal = "fonzera!"
+  // teste():void{
+  //   console.log('funcionou? XD')
+  //    fetch("http://192.168.0.111:5050/api/all").then(res=>{
+  //      return res.json()
+  //    }).then(json=>{
+  //      console.log(json)
+  //    })
+  // }
   
 
 }

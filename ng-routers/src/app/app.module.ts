@@ -16,6 +16,7 @@ import { ForDirective } from './directives/for.directive';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import {MatSidenavModule } from '@angular/material/sidenav'
 // import {MatListModule } from '@angular/material/list'
 
@@ -34,6 +35,8 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatIconModule,
     MatSelectModule,
     MatSnackBarModule,
