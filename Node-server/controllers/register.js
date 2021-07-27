@@ -13,7 +13,6 @@ module.exports = {
 
     registerItem( nome, garantia, fabricante, suporte ){
         this.roteadores.push({id:generateID(), nome, garantia, fabricante, suporte})
-        console.log('ok')
     }
 
 }

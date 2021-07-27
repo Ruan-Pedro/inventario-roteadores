@@ -21,10 +21,10 @@ export class RouterService {
     })
   }
 
-  create(router:RouterData): Observable<RouterData> {
+  create(routerData:RouterData): Observable<RouterData> {
     console.log(`${this.baseUrl}/new`)
-    console.log(router)
-    return this.http.post<RouterData>(`${this.baseUrl}/new`, router)
+    console.log(routerData)
+    return this.http.post<RouterData>(`${this.baseUrl}/new`, routerData)
   }
 
   read():Observable<RouterData[]>{
