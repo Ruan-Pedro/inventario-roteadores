@@ -17,6 +17,5 @@ export class ForDirective implements OnChanges{
       this.container.createEmbeddedView(this.template, { $implicit: number })
     }
     console.log(this.numbers)
-
   }
 }

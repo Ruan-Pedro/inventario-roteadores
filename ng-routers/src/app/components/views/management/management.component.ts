@@ -2,16 +2,15 @@ import { RouterService } from './../../router/router.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { RouterData } from './router.model';
- 
+
 @Component({
   selector: 'app-management',
   templateUrl: './management.component.html',
   styleUrls: ['./management.component.scss']
 })
 export class ManagementComponent implements OnInit {
-  
   routerData: RouterData = {
-    name:'',
+    nome:'',
     fabricante:'',
     garantia:'',
     suporte:'',
@@ -28,7 +27,7 @@ export class ManagementComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  showCreatedRouter():void{
+  creatingData():void{
     this.RouterService.create(this.routerData).subscribe(()=>{
       this.RouterService.showMSG('Roteador Adcionado com sucesso!')
     })
