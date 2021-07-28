@@ -8,7 +8,7 @@
     <div class="row100">
         <div class="col">
             <div class="inputBox">
-                <input type="text" name="name" required [(ngModel)]="routerData.name">
+                <input type="text" name="nome" required [(ngModel)]="routerData.nome">
                 <span class="text">Nome do Roteador</span>
                 <span class="line"></span>
             </div>
@@ -28,27 +28,20 @@
       <div class="col">
           <div class="inputBox">
               <div class="select">
-              <select type="text" name="garantia" required>
-              <option selected disabled [(ngModel)]="routerData.garantia">Possui Garantia?</option>
-              <option value="Sim" name="sim" >Sim</option>
-              <option value="Não" name="não">Não</option>
+              <select type="text" name="garantia" required [(ngModel)]="routerData.garantia">
+              <option selected disabled >Possui Garantia?</option>
+              <option value="Sim" name="garantia">Sim</option>
+              <option value="Não" name="garantia">Não</option>
               </select>
+              <span class="line"></span>
+
               </div>
-              <!-- <mat-form-field appearance="fill">
-                <mat-label>Favorite food</mat-label>
-                <mat-select>
-                  <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field> -->
-              <!-- <span class="text">Suporte</span>
-              <span class="line"></span>  -->
+              
   </div>
       </div>
       <div class="col">
           <div class="inputBox">
-              <input  class="title" type="text" name="suporte" required [(ngModel)]="routerData.suporte">
+              <input  class="title" type="date" name="suporte" required [(ngModel)]="routerData.suporte">
               <span class="text">Suporte <span style="font-size: 14px; font-weight: 200;">(em meses)</span></span>
   
               <span class="line"></span>
@@ -68,7 +61,7 @@
     <div class="row100">
       <div class="col">
           <div class="inputBox">
-            <button (click)="showCreatedRouter()">Salvar Roteador</button>
+            <button (click)="creatingData()">Salvar Roteador</button>
   
           </div>
       </div>
