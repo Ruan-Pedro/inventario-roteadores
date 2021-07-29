@@ -3,10 +3,10 @@ const bodyParser = require('body-parser')
 const register = require('../controllers/register')
 const router = express.Router()
 
-//conexão com o banco SQL SERVER
-const sql = require('mssql')
-const config = require('../infra/DB-connection')
-const db_operations = require('../infra/db_operations')
+
+const option = {
+    origin:"http://localhost:4200"
+}
 
 router.use((req,res, next)=>{
     console.log("middleware")
