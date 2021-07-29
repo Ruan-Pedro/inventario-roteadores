@@ -1,6 +1,6 @@
 export  interface RouterData {
     id?:number
-    name: string
+    nome: string
     fabricante:string
     garantia: string
     suporte: string

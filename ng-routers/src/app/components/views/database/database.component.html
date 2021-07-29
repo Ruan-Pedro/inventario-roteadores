@@ -10,11 +10,11 @@
         <li>Suporte</li>
     </ul>
     <ul *ngFor="let routerData of routerDatas " class="data-base flexStyle">
-        <li>{{ routerData.id }}</li>
+        <li>{{ routerData.id_roteador }}</li>
         <li>{{ routerData.nome }}</li>
         <li>{{ routerData.fabricante }}</li>
         <li>{{ routerData.garantia }}</li>
-        <li>{{ routerData.suporte }}</li>
+        <li>{{ routerData.suporte | date:'dd MMMM yyyy' }}</li>
     </ul>
 
 
