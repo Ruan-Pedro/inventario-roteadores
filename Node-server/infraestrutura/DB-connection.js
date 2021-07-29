@@ -2,11 +2,12 @@ const config = {
     user: 'ruan-pedro',
     password:'admin123',
     server:'192.168.12.116',
-    database:'Routers_inventory',
+    database:'Routers_Inventory',
     options:{
-        trustedconnection: true,
-        enableArithPort: true,
-        instanceName: 'DESKTOP-87A6H1O\SQLEXPRESS'
+         //  trustedconnection:true,
+         encrypt: false,
+         enableArithPort: true,
+        // instancename:'\MSSQL',
     },
     PORT: 5050
 }
