@@ -37,10 +37,11 @@ async function insertRouter(model){
         .input('garantia', sql.VarChar, model.garantia)
         .input('suporte', sql.VarChar, model.suporte)
         .input('justificativa', sql.Text, model.justificativa)
+        .input('imagem', sql.Text, model.imagem)
         .query(`
-        insert into roteadores_cad (nome, fabricante , garantia, suporte, justificativa) 
+        insert into roteadores_cad (nome, fabricante , garantia, suporte, justificativa, rot_img) 
         values 
-        (@nome , @fabricante, @garantia, @suporte, @justificativa)
+        (@nome , @fabricante, @garantia, @suporte, @justificativa, @imagem)
         `)
         
         // .query("select * from roteadores_cad where id_roteador = @input_parameter");
@@ -89,9 +90,11 @@ async function updateRouter(model, routerID){
         .input('garantia', sql.VarChar, model.garantia)
         .input('suporte', sql.VarChar, model.suporte)
         .input('justificativa', sql.Text, model.justificativa)
+        .input('imagem', sql.Text, model.imagem)
+
         .query(`
         UPDATE roteadores_cad
-        SET nome = @nome, fabricante = @fabricante, garantia = @garantia, suporte = @suporte, justificativa = @justificativa
+        SET nome = @nome, fabricante = @fabricante, garantia = @garantia, suporte = @suporte, justificativa = @justificativa, imagem = @imagem
         WHERE id_roteador = @id
         `)
         

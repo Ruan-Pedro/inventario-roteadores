@@ -14,10 +14,13 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatSelectModule } from '@angular/material/select';
 import { ForDirective } from './directives/for.directive';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatButtonModule } from '@angular/material/button'
 
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import { DialogPopupdelComponent } from './components/dialog-popupdel/dialog-popupdel.component'
 // import {MatSidenavModule } from '@angular/material/sidenav'
 // import {MatListModule } from '@angular/material/list'
 
@@ -31,19 +34,23 @@ import { MatInputModule } from '@angular/material/input'
     DatabaseComponent,
     SidenavComponent,
     ForDirective,
+    DialogPopupdelComponent,
     
   ],
+  entryComponents: [DialogPopupdelComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    MatButtonModule,
     FormsModule,
     MatIconModule,
     MatSelectModule,
     MatSnackBarModule,
     HttpClientModule,
     MatInputModule,
+    MatDialogModule
   ],
   exports: [
     

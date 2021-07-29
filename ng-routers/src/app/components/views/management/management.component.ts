@@ -15,6 +15,7 @@ export class ManagementComponent implements OnInit {
     garantia:'',
     suporte:'',
     justificativa:'',
+    imagem: ''
   }
 
   constructor(

@@ -5,7 +5,8 @@ class Router{
         this.fabricante = fabricante,
         this.garantia = garantia,
         this.suporte = suporte,
-        this.justificativa = justificativa
+        this.justificativa = justificativa,
+        this.imagem = imagem
     }
 }
 module.exports = Router

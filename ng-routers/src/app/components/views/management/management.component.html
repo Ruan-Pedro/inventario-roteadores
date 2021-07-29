@@ -27,11 +27,11 @@
     <div class="row100">
       <div class="col">
           <div class="inputBox">
-              <div class="select">
+              <div class="select" >
               <select type="text" name="garantia" required [(ngModel)]="routerData.garantia">
-              <option selected disabled >Possui Garantia?</option>
-              <option value="Sim" name="garantia">Sim</option>
-              <option value="Não" name="garantia">Não</option>
+              <option value="" selected  disabled>Possui Garantia?</option>
+              <option value="Sim" name="garantia" >Sim</option>
+              <option value="Não" name="garantia" >Não</option>
               </select>
               <span class="line"></span>
 
@@ -41,14 +41,23 @@
       </div>
       <div class="col">
           <div class="inputBox">
-              <input  class="title" type="date" name="suporte" required [(ngModel)]="routerData.suporte">
-              <span class="text">Suporte <span style="font-size: 14px; font-weight: 200;">(em meses)</span></span>
+              <input style="color: #232427; z-index: 1;" class="title gamb-color-transp" type="date" name="suporte" required [(ngModel)]="routerData.suporte">
+              <span style="z-index: 2;" class="text">Suporte <span style="font-size: 14px; font-weight: 200;">(em meses)</span></span>
   
-              <span class="line"></span>
+              <span style="z-index: 0;" class="line"></span>
           </div>
       </div>
   </div>
   <div class="row100" >
+    <div class="col">
+        <div class="inputBox">
+            <input class="title" type="text" name="fabricante" required [(ngModel)]="routerData.imagem">
+            <span class="text">Insira o link da imagem do roteador </span>
+
+            <span class="line"></span>
+        </div>
+    </div>
+
       <div class="col">
           <div class="inputBox textarea">
               <textarea matInput id="description" required="required" name="justificativa" [(ngModel)]="routerData.justificativa"></textarea>
@@ -71,3 +80,4 @@
     </div>
 
   </div>
+
