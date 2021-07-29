@@ -4,13 +4,16 @@ const path = require('path')
 //  const bodyParser = require('body-parser')
 const sql = require('mssql')
 const config = require('./infra/DB-connection')
-const db_operations = require('./infra/db_operations')
 
 const apiRoutes = require('./routes/api')
 const cors = require('cors')
 const routerModel = require('./models/routerModel')
 const app = express()
 const PORT = 5050
+
+const db_operations = require('./infraestrutura/db_operations')
+
+
 
 const option = {
     origin:"http://localhost:4200"

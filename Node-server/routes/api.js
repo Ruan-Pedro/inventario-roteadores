@@ -3,10 +3,10 @@ const bodyParser = require('body-parser')
 const register = require('../controllers/register')
 const router = express.Router()
 
-//conexão com o banco SQL SERVER
-const sql = require('mssql')
-const config = require('../infra/DB-connection')
-const db_operations = require('../infra/db_operations')
+
+const option = {
+    origin:"http://localhost:4200"
+}
 
 router.use((req,res, next)=>{
     console.log("middleware")
@@ -38,12 +38,12 @@ router.post('/insertrouter', bodyParser.json(), (req,res,next)=>{
     //   return res.status(200).send(result)
 })
 
-//  router.delete('/delete/:id', (req,res,next)=>{
-//      db_operations.deleteRouter(req.params.id).then(result =>{
-//          res.status(200).send(`Linha cujo ID = ${req.params.id} deletado com sucesso`)
-//      })
-//  })
-
+  router.delete('/deleterouter/:id', (req,res,next)=>{
+      console.log('deletando blz')
+     db_operations.deleteRouter(req.params.id).then(result =>{
+         res.status(200).send(`Linha cujo ID = ${req.params.id} deletado com sucesso`)
+     })
+    })
 
  router.delete('/deleterouter',  bodyParser.json(), (req,res,next)=>{
       let idBody = req.body.id

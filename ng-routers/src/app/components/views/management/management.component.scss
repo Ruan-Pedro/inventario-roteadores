@@ -62,6 +62,7 @@
     transition: 0.5s;
     pointer-events: none;
 }
+
 .container .row100 .inputBox input:focus +  .text,
 .container .row100 .inputBox input:valid +  .text{
     top: -35px;
@@ -118,6 +119,7 @@
     appearance: none;
     font-size: 18px;
     outline: none;
+    width: 100%;
     padding: 0px 21em 0 0.5em;
 }
 .container .row100 .inputBox .select{
@@ -125,18 +127,20 @@
     display: flex;
     height: 2.5em;
     line-height: 3;
-    
-    /* overflow: hidden; */
+    width: 100%;
+
 }
 .container .row100 .inputBox .select option{
-    background-color: #000;
+    background-color: rgb(17, 17, 17);
     color: #45f3ff;
+    width: 100%;
+
 }
 
-// .container .row100 .inputBox .select option:hover{
-//     background-color: #45f3ff;
-//     color: #000;
-// }
+//  .container .row100 .inputBox .select option:target{
+//      background-color: #6ea9ad;
+//      color: rgb(250, 67, 67);
+//  }
 .select::after{
     content: '\25BC';
     position: absolute;
@@ -149,6 +153,7 @@
     cursor: pointer;
     pointer-events: none;
     transition: .5s all ease;
+    
 }
 .container button:hover , .btn-delete:hover{
     background: transparent;
