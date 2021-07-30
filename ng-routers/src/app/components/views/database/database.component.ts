@@ -1,8 +1,8 @@
-import { DialogPopupdelComponent } from './../../dialog-popupdel/dialog-popupdel.component';
-import { RouterDataDel } from './../management/routerDel.model';
+import { DialogPopupdelComponent } from '../../dialog-popupdel/dialog-popupdel.component';
 import { RouterService } from '../../services/router.service';
 import { Component, OnInit } from '@angular/core';
 import { RouterData } from '../management/router.model'
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog'
 
 @Component({
   selector: 'app-database',
@@ -11,13 +11,11 @@ import { RouterData } from '../management/router.model'
 })
 export class DatabaseComponent implements OnInit {
   
-  routerDataDel: RouterDataDel = {
-    id:null
-  }
-
   routerDatas: RouterData[]
   constructor(
     private RouterService:RouterService,
+    public dialog: MatDialog
+
   ) {  }
 
   ngOnInit(): void {
@@ -26,9 +24,27 @@ export class DatabaseComponent implements OnInit {
       console.log(routerDatas)
     } )
   }
-  openDialog():void{
-    this.RouterService.openDialog()
+
+  openDialog(idRouter: number){
+    const dialogConfig = new MatDialogConfig()
+    dialogConfig.width = '35%'
+    dialogConfig.height = '30%',
+    dialogConfig.backdropClass = "bdrop",
+    dialogConfig.position = {
+      'top':'15%',
+      'right':'450px'
+    }
+    dialogConfig.data = {
+      functionDel: (id_router: number) => {
+        this.deleteLine(idRouter);
+      },
+      idRouter
+    }
+    this.dialog.open(DialogPopupdelComponent, dialogConfig)
   }
+  // openDialog():void{
+  //   this.RouterService.openDialog()
+  // }
 
   deleteLine(id_router): void{
     this.RouterService.deleteItem(id_router).subscribe(()=>{

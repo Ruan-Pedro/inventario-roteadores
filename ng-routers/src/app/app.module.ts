@@ -20,7 +20,11 @@ import { MatButtonModule } from '@angular/material/button'
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import { DialogPopupdelComponent } from './components/dialog-popupdel/dialog-popupdel.component'
+import { DialogPopupdelComponent } from './components/dialog-popupdel/dialog-popupdel.component';
+import { InsertComponent } from './components/views/management/insert/insert.component';
+import { DeleteComponent } from './components/views/management/delete/delete.component';
+import { UpdateComponent } from './components/views/management/update/update.component';
+
 // import {MatSidenavModule } from '@angular/material/sidenav'
 // import {MatListModule } from '@angular/material/list'
 
@@ -35,6 +39,9 @@ import { DialogPopupdelComponent } from './components/dialog-popupdel/dialog-pop
     SidenavComponent,
     ForDirective,
     DialogPopupdelComponent,
+    InsertComponent,
+    DeleteComponent,
+    UpdateComponent,
     
   ],
   entryComponents: [DialogPopupdelComponent],
@@ -50,7 +57,8 @@ import { DialogPopupdelComponent } from './components/dialog-popupdel/dialog-pop
     MatSnackBarModule,
     HttpClientModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    
   ],
   exports: [
     
