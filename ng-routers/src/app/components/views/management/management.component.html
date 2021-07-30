@@ -1,10 +1,20 @@
-
-
   <app-sidenav></app-sidenav>
-  
   <div class="container">
 
-    <h2 id="propLegal">Cadastre um Novo Roteador</h2>
+    <button [routerLink]="['insert']">
+        Inserir Dados
+    </button>
+
+    <button [routerLink]="['delete']">
+        Deletar Dados
+    </button>
+
+    <button [routerLink]="['update']">
+        Atualizar Dados
+    </button>
+
+    
+    <!-- <h2 id="propLegal">Cadastre um Novo Roteador</h2>
     <div class="row100">
         <div class="col">
             <div class="inputBox">
@@ -75,9 +85,9 @@
           </div>
       </div>
     </div>
-    <div class="result-container">
+    <div class="result-container"> -->
         <!-- <router-outlet></router-outlet> -->
-    </div>
+    <!-- </div> -->
 
   </div>
 

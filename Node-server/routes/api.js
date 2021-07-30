@@ -3,6 +3,8 @@ const bodyParser = require('body-parser')
 const register = require('../controllers/register')
 const router = express.Router()
 
+const config = require('../infra/DB-connection')
+const db_operations = require('../infra/db_operations')
 
 const option = {
     origin:"http://localhost:4200"
@@ -55,9 +57,10 @@ router.post('/insertrouter', bodyParser.json(), (req,res,next)=>{
 
 router.post('/updaterouter', bodyParser.json(), (req,res,next)=>{
     //  res.status(200).json(register.getAll())
+    // let routerID = req.body.id
     let routerModel = req.body
-    let routerID = req.body.id
-       db_operations.updateRouter(routerModel, routerID).then(result =>{
+    res.send(routerModel)
+       db_operations.updateRouter(routerModel).then(result =>{
           res.status(200).json(result)
        })
     })
