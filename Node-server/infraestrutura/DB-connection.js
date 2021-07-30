@@ -9,6 +9,5 @@ const config = {
          enableArithPort: true,
         // instancename:'\MSSQL',
     },
-    PORT: 5050
 }
 module.exports = config
