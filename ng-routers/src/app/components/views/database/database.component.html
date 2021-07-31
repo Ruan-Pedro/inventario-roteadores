@@ -15,6 +15,9 @@
         <li>{{ routerData.fabricante }}</li>
         <li>{{ routerData.garantia }}</li>
         <li>{{ routerData.suporte | date:'dd MMMM yyyy' }}</li>
+        <div class="delete-line" (click)="openDialog(routerData.id_roteador)">X</div>
     </ul>
+    
+
 
 

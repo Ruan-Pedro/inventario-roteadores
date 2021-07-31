@@ -41,12 +41,12 @@ router.post('/insertrouter', bodyParser.json(), (req,res,next)=>{
     //   return res.status(200).send(result)
 })
 
-//  router.delete('/delete/:id', (req,res,next)=>{
-//      db_operations.deleteRouter(req.params.id).then(result =>{
-//          res.status(200).send(`Linha cujo ID = ${req.params.id} deletado com sucesso`)
-//      })
-//  })
-
+  router.delete('/deleterouter/:id', (req,res,next)=>{
+      console.log('deletando blz')
+     db_operations.deleteRouter(req.params.id).then(result =>{
+         res.status(200).send(`Linha cujo ID = ${req.params.id} deletado com sucesso`)
+     })
+    })
 
  router.delete('/deleterouter',  bodyParser.json(), (req,res,next)=>{
       let idBody = req.body.id
@@ -58,9 +58,10 @@ router.post('/insertrouter', bodyParser.json(), (req,res,next)=>{
 
 router.post('/updaterouter', bodyParser.json(), (req,res,next)=>{
     //  res.status(200).json(register.getAll())
+    // let routerID = req.body.id
     let routerModel = req.body
-    let routerID = req.body.id
-       db_operations.updateRouter(routerModel, routerID).then(result =>{
+    res.send(routerModel)
+       db_operations.updateRouter(routerModel).then(result =>{
           res.status(200).json(result)
        })
     })

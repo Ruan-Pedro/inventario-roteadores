@@ -4,5 +4,7 @@ export  interface RouterData {
     fabricante:string
     garantia: string
     suporte: string
-    justificativa: string
+    justificativa: string,
+    imagem: string
 }
+

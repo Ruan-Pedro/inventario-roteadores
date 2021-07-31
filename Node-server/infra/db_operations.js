@@ -37,10 +37,11 @@ async function insertRouter(model){
         .input('garantia', sql.VarChar, model.garantia)
         .input('suporte', sql.VarChar, model.suporte)
         .input('justificativa', sql.Text, model.justificativa)
+        .input('imagem', sql.Text, model.imagem)
         .query(`
-        insert into roteadores_cad (nome, fabricante , garantia, suporte, justificativa) 
+        insert into roteadores_cad (nome, fabricante , garantia, suporte, justificativa, rot_img) 
         values 
-        (@nome , @fabricante, @garantia, @suporte, @justificativa)
+        (@nome , @fabricante, @garantia, @suporte, @justificativa, @imagem)
         `)
         
         // .query("select * from roteadores_cad where id_roteador = @input_parameter");
@@ -77,21 +78,23 @@ async function deleteRouter(routerID){
 //     }
 // }
 
-async function updateRouter(model, routerID){
+async function updateRouter(model){
     try{
         let pool = await sql.connect(config)
         let updateRouter = await pool.request()
         
         //  .input('id', sql.Int, model.id)
-        .input('id', sql.Int, routerID)
+        .input('id', sql.Int, model.id)
         .input('nome', sql.VarChar, model.nome)
         .input('fabricante', sql.VarChar, model.fabricante)
         .input('garantia', sql.VarChar, model.garantia)
         .input('suporte', sql.VarChar, model.suporte)
-        .input('justificativa', sql.Text, model.justificativa)
+        .input('justificativa', sql.VarChar, model.justificativa)
+        .input('imagem', sql.VarChar, model.imagem)
+
         .query(`
         UPDATE roteadores_cad
-        SET nome = @nome, fabricante = @fabricante, garantia = @garantia, suporte = @suporte, justificativa = @justificativa
+        SET nome = @nome, fabricante = @fabricante, garantia = @garantia, suporte = @suporte, justificativa = @justificativa, rot_img = @imagem
         WHERE id_roteador = @id
         `)
         
