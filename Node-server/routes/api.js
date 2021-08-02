@@ -55,12 +55,13 @@ router.post('/insertrouter', bodyParser.json(), (req,res,next)=>{
      })
  }) 
 
-router.post('/updaterouter', bodyParser.json(), (req,res,next)=>{
+router.put('/updaterouter/:id', bodyParser.json(), (req,res,next)=>{
     //  res.status(200).json(register.getAll())
     // let routerID = req.body.id
+    let routerID = req.params.id
     let routerModel = req.body
     res.send(routerModel)
-       db_operations.updateRouter(routerModel).then(result =>{
+       db_operations.updateRouter(routerModel, routerID).then(result =>{
           res.status(200).json(result)
        })
     })

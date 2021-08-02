@@ -24,6 +24,7 @@ import { DialogPopupdelComponent } from './components/dialog-popupdel/dialog-pop
 import { InsertComponent } from './components/views/management/insert/insert.component';
 import { DeleteComponent } from './components/views/management/delete/delete.component';
 import { UpdateComponent } from './components/views/management/update/update.component';
+import { UpdateFormComponent } from './components/views/management/update/update-form/update-form.component';
 
 // import {MatSidenavModule } from '@angular/material/sidenav'
 // import {MatListModule } from '@angular/material/list'
@@ -42,6 +43,7 @@ import { UpdateComponent } from './components/views/management/update/update.com
     InsertComponent,
     DeleteComponent,
     UpdateComponent,
+    UpdateFormComponent,
     
   ],
   entryComponents: [DialogPopupdelComponent],

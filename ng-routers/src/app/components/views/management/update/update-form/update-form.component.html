@@ -1,5 +1,6 @@
+<app-sidenav></app-sidenav>
 <div class="container">
-    <h2 id="propLegal">Cadastre um Novo Roteador</h2>
+    <h2 id="propLegal">Altere os dados do roteador escolhido</h2>
         <div class="row100">
             <div class="col">
                 <div class="inputBox">
@@ -29,6 +30,7 @@
                   <option value="Não" name="garantia" >Não</option>
                   </select>
                   <span class="line"></span>
+    
                   </div>
                   
       </div>
@@ -64,8 +66,9 @@
         <div class="row100">
           <div class="col">
               <div class="inputBox">
-                <button (click)="creatingData()">Salvar Roteador</button>
-      
+                <button (click)="updateRouter()">Salvar Roteador</button>
+                <button (click)="cancel()">Cancelar</button>
+
               </div>
           </div>
         </div>

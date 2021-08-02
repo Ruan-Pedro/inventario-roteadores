@@ -24,23 +24,31 @@ export class RouterService {
     })
   }
 
+  read():Observable<RouterData[]>{
+    return this.http.get<RouterData[]>(`${this.baseUrl}/all`)
+  }
+  readById(id:string): Observable<RouterData>{
+    const urlById = `${this.baseUrl}/all/${id}`
+    return this.http.get<RouterData>(urlById)
+  }
+
   create(routerData:RouterData): Observable<RouterData> {
     console.log(`${this.baseUrl}/insertrouter`)
     console.log(routerData)
     return this.http.post<RouterData>(`${this.baseUrl}/insertrouter`, routerData)
   }
 
-  read():Observable<RouterData[]>{
-    return this.http.get<RouterData[]>(`${this.baseUrl}/all`)
-  }
-  
   deleteItem(id:Number):Observable<Number>{
     const urlDel = `${this.baseUrl}/deleterouter/${id}`
     console.log(urlDel);
-    this.route.navigate(['/management'])
+    // this.route.navigate(['/management'])
+    location.reload()
     return this.http.delete<Number>(urlDel)
-
   }
+
+  updateItem(routerData:RouterData):Observable<RouterData>{
+    const url = `${this.baseUrl}/updaterouter/${routerData.id}`
+    return this.http.put<RouterData>(url, routerData)}
 }
 
 
