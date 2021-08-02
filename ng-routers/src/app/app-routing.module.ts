@@ -7,6 +7,7 @@ import { ManagementComponent } from './components/views/management/management.co
 import { DashboardComponent } from './components/views/dashboard/dashboard.component';
 import { DatabaseComponent } from './components/views/database/database.component';
 import { HomeComponent } from './components/template/home/home.component';
+import { UpdateFormComponent } from './components/views/management/update/update-form/update-form.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,10 @@ const routes: Routes = [
     path: "database",
     component: DatabaseComponent
   },
+  {
+    path:"management/update/:id",
+    component: UpdateFormComponent
+  }
 ];
 
 @NgModule({

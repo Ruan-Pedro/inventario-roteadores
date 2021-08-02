@@ -1,4 +1,4 @@
-const config = require('./DB-connection')
+const config = require('../infra/DB-connection')
 const sql = require('mssql')
 const routerModel = require('../models/routerModel')
 
@@ -6,7 +6,7 @@ const routerModel = require('../models/routerModel')
 async function getRouters(){
     try{
         let pool = await sql.connect(config)
-        let routers = await pool.request().query("SELECT * FROM roteadores_cad")
+        let routers = await pool.request().query("select * from roteador;")
         return routers.recordset
     }catch(error){
         console.log(error)
@@ -19,7 +19,7 @@ async function getRouter(routerID){
         let router = await pool.request()
         .input('input_parameter', sql.Int, routerID)
         .query("select * from roteadores_cad where id_roteador = @input_parameter");
-    return router.recordset
+    return router.recordset[0]
     }
     catch(error){
         console.log(error)
@@ -78,13 +78,13 @@ async function deleteRouter(routerID){
 //     }
 // }
 
-async function updateRouter(model){
+async function updateRouter(model, routerID){
     try{
         let pool = await sql.connect(config)
         let updateRouter = await pool.request()
         
         //  .input('id', sql.Int, model.id)
-        .input('id', sql.Int, model.id)
+        .input('id', sql.Int, routerID)
         .input('nome', sql.VarChar, model.nome)
         .input('fabricante', sql.VarChar, model.fabricante)
         .input('garantia', sql.VarChar, model.garantia)
