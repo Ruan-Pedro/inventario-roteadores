@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const register = require('../controllers/register')
 const router = express.Router()
 
+const sql = require('mssql')
 const config = require('../infra/DB-connection')
 const db_operations = require('../infra/db_operations')
 

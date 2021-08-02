@@ -1,4 +1,4 @@
-const config = require('./DB-connection')
+const config = require('../infra/DB-connection')
 const sql = require('mssql')
 const routerModel = require('../models/routerModel')
 
@@ -6,7 +6,7 @@ const routerModel = require('../models/routerModel')
 async function getRouters(){
     try{
         let pool = await sql.connect(config)
-        let routers = await pool.request().query("SELECT * FROM roteadores_cad")
+        let routers = await pool.request().query("select * from roteador;")
         return routers.recordset
     }catch(error){
         console.log(error)
