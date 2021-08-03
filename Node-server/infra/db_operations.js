@@ -6,7 +6,7 @@ const routerModel = require('../models/routerModel')
 async function getRouters(){
     try{
         let pool = await sql.connect(config)
-        let routers = await pool.request().query("select * from roteador;")
+        let routers = await pool.request().query("select * from roteadores_cad;")
         return routers.recordset
     }catch(error){
         console.log(error)
