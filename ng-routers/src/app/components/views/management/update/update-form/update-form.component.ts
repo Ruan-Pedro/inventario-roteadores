@@ -30,7 +30,7 @@ export class UpdateFormComponent implements OnInit {
   updateRouter():void{
     this.RouterService.updateItem(this.routerData).subscribe(()=>{
       this.RouterService.showMSG('Item atualizado com sucesso!')
-      this.router.navigate(['/database'])
+      this.router.navigate(['/management/update'])
     })
   }
 }

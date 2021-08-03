@@ -38,7 +38,7 @@ export class RouterService {
     return this.http.post<RouterData>(`${this.baseUrl}/insertrouter`, routerData)
   }
 
-  deleteItem(id:Number):Observable<Number>{
+  deleteItem(id:string):Observable<Number>{
     const urlDel = `${this.baseUrl}/deleterouter/${id}`
     console.log(urlDel);
     // this.route.navigate(['/management'])
@@ -47,7 +47,8 @@ export class RouterService {
   }
 
   updateItem(routerData:RouterData):Observable<RouterData>{
-    const url = `${this.baseUrl}/updaterouter/${routerData.id}`
+    const url = `${this.baseUrl}/updaterouter/${routerData.id_roteador}`
+    console.log(routerData.id_roteador)
     return this.http.put<RouterData>(url, routerData)}
 }
 

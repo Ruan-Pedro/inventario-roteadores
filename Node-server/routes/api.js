@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const register = require('../controllers/register')
 const router = express.Router()
+require('dotenv').config()
 
 const sql = require('mssql')
 const config = require('../infra/DB-connection')
@@ -12,7 +13,6 @@ const option = {
 }
 
 router.use((req,res, next)=>{
-    console.log("middleware")
     next()
 })
 

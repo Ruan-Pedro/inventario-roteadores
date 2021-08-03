@@ -1,8 +1,14 @@
+require('dotenv').config()
+
+const PASSWORD = process.env.PASSWORD
+const USER = process.env.USER
+const DATABASE = process.env.DATABASE
+const SERVER = process.env.SERVER
 const config = {
-    user:"sa",
-    password: "ruan@2021",
-    database:"Routers_Inventory",
-    server: "192.168.12.116",
+    user: USER,
+    password: PASSWORD,
+    database:DATABASE,
+    server: SERVER,
     // host:"192.168.0.111",
     options:{
       //  trustedconnection:true,
