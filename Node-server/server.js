@@ -5,6 +5,7 @@ const sql = require('mssql')
 const config = require('./infra/DB-connection')
 
 const apiRoutes = require('./routes/api')
+const userRoutes = require('./routes/userRouter')
 const cors = require('cors')
 const routerModel = require('./models/routerModel')
 const app = express()
