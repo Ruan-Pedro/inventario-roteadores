@@ -36,8 +36,8 @@ async function insertRouter(model){
         .input('fabricante', sql.VarChar, model.fabricante)
         .input('garantia', sql.VarChar, model.garantia)
         .input('suporte', sql.VarChar, model.suporte)
-        .input('justificativa', sql.Text, model.justificativa)
-        .input('imagem', sql.Text, model.imagem)
+        .input('justificativa', sql.VarChar, model.justificativa)
+        .input('imagem', sql.VarChar, model.imagem)
         .query(`
         insert into roteadores_cad (nome, fabricante , garantia, suporte, justificativa, rot_img) 
         values 
