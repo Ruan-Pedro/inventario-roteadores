@@ -25,6 +25,8 @@ import { InsertComponent } from './components/views/management/insert/insert.com
 import { DeleteComponent } from './components/views/management/delete/delete.component';
 import { UpdateComponent } from './components/views/management/update/update.component';
 import { UpdateFormComponent } from './components/views/management/update/update-form/update-form.component';
+import { LoginComponent } from './components/views/login/login.component';
+import { RouterOneComponent } from './components/views/router-one/router-one.component';
 
 // import {MatSidenavModule } from '@angular/material/sidenav'
 // import {MatListModule } from '@angular/material/list'
@@ -44,6 +46,8 @@ import { UpdateFormComponent } from './components/views/management/update/update
     DeleteComponent,
     UpdateComponent,
     UpdateFormComponent,
+    LoginComponent,
+    RouterOneComponent,
     
   ],
   entryComponents: [DialogPopupdelComponent],
