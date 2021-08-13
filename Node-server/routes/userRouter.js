@@ -3,6 +3,8 @@ const userRouter = express.Router()
 const bodyParser = require('body-parser')
 const userController = require('../controllers/userController')
 const User = require('../models/modelUser')
+const bcrypt = require('bcryptjs')
+
 require('dotenv').config()
 
 userRouter.use((req,res, next)=>{
@@ -10,10 +12,9 @@ userRouter.use((req,res, next)=>{
 })
 
 userRouter.post('/register', bodyParser.json(), (req,res,next)=>{
-    let userModel = req.body
+    const userModel = req.body
     userController.registerUser(userModel).then(result =>{
-        console.log(userModel)
-        res.status(200).json(result)
+        res.status(200).send(result)
     })
 })
 // router.post('/login', userController)

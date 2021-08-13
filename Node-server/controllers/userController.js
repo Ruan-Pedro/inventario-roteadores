@@ -10,7 +10,7 @@ const bcrypt = require('bcryptjs')
             let register = await pool.request()
             .input('nome', sql.VarChar, userModel.nome)
             .input('email',sql.VarChar, userModel.email)
-            .input('senha', sql.VarChar,userModel.senha)
+            .input('senha', sql.VarChar,bcrypt.hashSync(userModel.senha))
             .query(`INSERT INTO user_info 
             (nome,email,senha)
             values
